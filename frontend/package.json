@@ -6,7 +6,7 @@
   "scripts": {
     "debug": "DEBUG=vite:* npx vite",
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --config vite.config.js",
     "preview": "vite preview"
   },
   "dependencies": {
