@@ -39,13 +39,13 @@ export default defineConfig({
       // ],
 
       {
-        "@components": path.resolve(__dirname, "src/components"),
-        "@pages": path.resolve(__dirname, "src/pages"),
-        "@assets": path.resolve(__dirname, "src/assets"),
-        "@store": path.resolve(__dirname, "src/store"),
-        "@ApiCalls": path.resolve(__dirname, "src/ApiCalls"),
-        "@config": path.resolve(__dirname, "src/config"),
-        "@utils": path.resolve(__dirname, "src/utils"),
+        "@components": path.resolve(__dirname, "components"),
+        "@pages": path.resolve(__dirname, "pages"),
+        "@assets": path.resolve(__dirname, "assets"),
+        "@store": path.resolve(__dirname, "store"),
+        "@ApiCalls": path.resolve(__dirname, "ApiCalls"),
+        "@config": path.resolve(__dirname, "config"),
+        "@utils": path.resolve(__dirname, "utils"),
       },
   },
 });
