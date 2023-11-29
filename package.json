@@ -10,8 +10,7 @@
     "build-client": "  npm run build",
     "start-client": "cd frontend && npm run dev",
     "start": "node server/server.js",
-    "server": "nodemon server/server.js",
-    "build": " npm install && cd frontend && npm install --prefix frontend && npm run build --prefix frontend"
+    "server": "nodemon server/server.js"
   },
   "author": "Sahil Hans",
   "license": "ISC"
