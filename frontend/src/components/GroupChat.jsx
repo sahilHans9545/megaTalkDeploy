@@ -4,11 +4,11 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import InfoIcon from "@mui/icons-material/Info";
 import { useDispatch, useSelector } from "react-redux";
-import { setSelectedChat } from "store/slices/chatSlice";
-import { setModalType } from "store/slices/modalSlice";
+import { setSelectedChat } from "@store/slices/chatSlice";
+import { setModalType } from "@store/slices/modalSlice";
 import { toast } from "react-toastify";
 import axios from "axios";
-import { getProfileName } from "config/chaLogics";
+import { getProfileName } from "@config/chaLogics";
 
 const GroupChat = () => {
   const selectedChat = useSelector((state) => state.chatData.selectedChat);

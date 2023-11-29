@@ -6,8 +6,8 @@ import { Oval } from "react-loader-spinner";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { useDispatch } from "react-redux";
-import { setUser } from "store/slices/userSlice";
-import { getUser } from "ApiCalls/api";
+import { setUser } from "@store/slices/userSlice";
+import { getUser } from "@ApiCalls/api";
 import { toast } from "react-toastify";
 
 const Login = () => {

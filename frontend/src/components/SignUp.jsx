@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import userImg from "assets/user.png";
+import userImg from "@assets/user.png";
 import axios from "axios";
 import { Oval } from "react-loader-spinner";
 // import { useDispatch } from "react-redux";
 // import { setUser } from "../store/slices/userSlice";
 // import { getUser } from "../ApiCalls/api";
 import { toast } from "react-toastify";
-import postDetails from "utils/profileUpload";
+import postDetails from "@utils/profileUpload";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);

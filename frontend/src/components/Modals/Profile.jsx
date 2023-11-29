@@ -1,8 +1,8 @@
 import React from "react";
 import CancelIcon from "@mui/icons-material/Cancel";
 import { useDispatch } from "react-redux";
-import { setModalType } from "store/slices/modalSlice";
-import userImg from "assets/user.png";
+import { setModalType } from "@store/slices/modalSlice";
+import userImg from "@assets/user.png";
 
 const Profile = ({ Data }) => {
   const dispatch = useDispatch();

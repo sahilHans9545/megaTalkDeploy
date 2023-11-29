@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { getSender } from "config/chaLogics";
+import { getSender } from "@config/chaLogics";
 
 const displayTypes = ["ALL", "PEOPLE", "GROUP", "UNREAD"];
 const ChatWith = ({ setDisplayChats, chats, searchTerm }) => {

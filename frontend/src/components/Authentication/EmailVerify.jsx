@@ -3,9 +3,9 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { useDispatch } from "react-redux";
-import { logOut } from "store/slices/userSlice";
-import { clearChat } from "store/slices/chatSlice";
-import { clearTheme } from "store/slices/themeSlice";
+import { logOut } from "@store/slices/userSlice";
+import { clearChat } from "@store/slices/chatSlice";
+import { clearTheme } from "@store/slices/themeSlice";
 
 const EmailVerify = () => {
   const [validUrl, setValidUrl] = useState(false);

@@ -8,11 +8,11 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import ImageIcon from "@mui/icons-material/Image";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { useDispatch, useSelector } from "react-redux";
-import { setFetchAgain, setSelectedChat } from "store/slices/chatSlice";
-import { setModalType } from "store/slices/modalSlice";
+import { setFetchAgain, setSelectedChat } from "@store/slices/chatSlice";
+import { setModalType } from "@store/slices/modalSlice";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { getProfileName } from "config/chaLogics";
+import { getProfileName } from "@config/chaLogics";
 
 const ChatHeader = ({ sender, setMessages, messages }) => {
   const dispatch = useDispatch();
