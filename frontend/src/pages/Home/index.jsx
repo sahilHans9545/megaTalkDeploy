@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./style.css";
-import SignUp from "/components/SignUp";
+import SignUp from "components/SignUp";
 import Login from "/components/login.jsx";
 import { Navigate } from "react-router-dom";
-import logo from "/assets/logo.png";
+import logo from "assets/logo.png";
 
 const Home = ({ user, setUser }) => {
   const [activeTab, setActiveTab] = useState("login");
