@@ -7,7 +7,7 @@
     "debug": "DEBUG=vite:* npx vite",
     "dev": "vite",
     "build": "npx vite build --config vite.config.js",
-    // "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    
     "preview": "vite preview"
   },
   "dependencies": {

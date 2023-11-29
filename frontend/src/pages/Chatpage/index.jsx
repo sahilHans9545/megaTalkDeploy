@@ -231,3 +231,4 @@ const ChatPage = () => {
 };
 
 export default ChatPage;
+// "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
