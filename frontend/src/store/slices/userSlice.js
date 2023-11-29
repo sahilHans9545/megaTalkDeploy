@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getUser } from "../../ApiCalls/api";
 
 const userSlice = createSlice({
   name: "user",

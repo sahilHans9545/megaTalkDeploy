@@ -1,5 +1,5 @@
 import React from "react";
-import UserSearchItem from "./UserSearchItem";
+import UserSearchItem from "components/UserSearchItem";
 
 const SearchedUser = ({ email, username, profile, accessChat, userId }) => {
   return (

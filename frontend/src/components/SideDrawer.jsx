@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import CancelIcon from "@mui/icons-material/Cancel";
-import SearchedUser from "./SearchedUser";
+import SearchedUser from "components/SearchedUser";
 import { useDispatch, useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import { Audio } from "react-loader-spinner";
 import axios from "axios";
-import { setChats } from "../store/slices/chatSlice";
+import { setChats } from "store/slices/chatSlice";
 
 const SideDrawer = ({ ShowSideDrawer, setShowSideDrawer }) => {
   const [search, setSearch] = useState("");

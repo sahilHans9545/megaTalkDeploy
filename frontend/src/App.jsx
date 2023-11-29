@@ -1,12 +1,12 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Home from "./pages/Home";
-import ChatPage from "./pages/Chatpage";
+import Home from "pages/Home";
+import ChatPage from "pages/Chatpage";
 import { useDispatch, useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import EmailVerify from "./components/Authentication/EmailVerify";
-import Error404 from "./components/Authentication/Error404";
+import EmailVerify from "components/Authentication/EmailVerify";
+import Error404 from "components/Authentication/Error404";
 
 function App() {
   const data = useSelector((state) => state.user);

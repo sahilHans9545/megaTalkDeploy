@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { ThreeDots } from "react-loader-spinner";
-import userImg from "../assets/user.png";
+import userImg from "assets/user.png";
 import {
   getOnceSenderUsername,
   isLastMessage,
   isPreviousDiff,
   isSameSender,
-} from "../config/chaLogics";
+} from "config/chaLogics";
 
 const ScrollableChat = ({ messages, istyping }) => {
   const messagesEndRef = useRef(null);

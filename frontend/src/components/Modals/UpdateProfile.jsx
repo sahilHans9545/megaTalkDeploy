@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CancelIcon from "@mui/icons-material/Cancel";
 
-import userImg from "../../assets/user.png";
-import { setModalType } from "../../store/slices/modalSlice";
+import userImg from "assets/user.png";
+import { setModalType } from "store/slices/modalSlice";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { setUser } from "../../store/slices/userSlice";
-import postDetails from "../../utils/profileUpload";
+import { setUser } from "store/slices/userSlice";
+import postDetails from "utils/profileUpload";
 // console.log("ProfileMODAL");
 const Profile = () => {
   const user = useSelector((state) => state.user.userData);

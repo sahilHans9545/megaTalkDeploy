@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import CancelIcon from "@mui/icons-material/Cancel";
 import { useDispatch, useSelector } from "react-redux";
-import { setModalType } from "../../../store/slices/modalSlice";
+import { setModalType } from "store/slices/modalSlice";
 import axios from "axios";
-import ImagesGrid from "./ImagesGrid";
+import ImagesGrid from "components/Modals/wallpaper/ImagesGrid";
 import { toast } from "react-toastify";
 
 import { setSelectedChat } from "../../../store/slices/chatSlice";

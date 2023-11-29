@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import CancelIcon from "@mui/icons-material/Cancel";
 import CloseIcon from "@mui/icons-material/Close";
 import { useDispatch, useSelector } from "react-redux";
-import { setModalType } from "../../store/slices/modalSlice";
+import { setModalType } from "store/slices/modalSlice";
 import { toast } from "react-toastify";
 import axios from "axios";
 
-import UserSearchItem from "../UserSearchItem";
-import { setChats, setSelectedChat } from "../../store/slices/chatSlice";
+import UserSearchItem from "components/UserSearchItem";
+import { setChats, setSelectedChat } from "store/slices/chatSlice";
 
 const CreateGroupChat = () => {
   const userInfo = useSelector((state) => state.user.userInfo);

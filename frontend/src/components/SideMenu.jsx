@@ -8,9 +8,9 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import LogoutIcon from "@mui/icons-material/Logout";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { useDispatch, useSelector } from "react-redux";
-import { logOut } from "../store/slices/userSlice";
+import { logOut } from "store/slices/userSlice";
 import { useNavigate } from "react-router-dom";
-import { setModalType } from "../store/slices/modalSlice";
+import { setModalType } from "store/slices/modalSlice";
 import {
   clearTheme,
   setSiteMode,

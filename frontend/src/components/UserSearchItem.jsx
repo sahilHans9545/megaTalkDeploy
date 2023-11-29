@@ -1,5 +1,5 @@
 import React from "react";
-import userImg from "../assets/user.png";
+import userImg from "assets/user.png";
 const UserSearchItem = ({ email, username, profile, admin = "" }) => {
   return (
     <div className="flex items-center gap-2 bg-color4 p-2 rounded-md cursor-pointer">

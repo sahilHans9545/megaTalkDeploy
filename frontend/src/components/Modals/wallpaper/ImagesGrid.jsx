@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setSelectedChat } from "../../../store/slices/chatSlice";
+import { setSelectedChat } from "store/slices/chatSlice";
 import { toast } from "react-toastify";
 import axios from "axios";
-import OvalLoading from "../../OvalLoading";
-import { setModalType } from "../../../store/slices/modalSlice";
+import OvalLoading from "components/OvalLoading";
+import { setModalType } from "store/slices/modalSlice";
 
 const ImagesGrid = ({ socket, images }) => {
   const { selectedChat } = useSelector((state) => state.chatData);
