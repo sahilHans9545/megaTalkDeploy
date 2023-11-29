@@ -21,7 +21,7 @@ const ImagesGrid = ({ socket, images }) => {
         },
       };
       const { data } = await axios.put(
-        `http://localhost:5000/api/chat/wallpaper`,
+        `https://megatalk-backend.onrender.com/api/chat/wallpaper`,
         {
           chatId: selectedChat._id,
           wallpaper: image,

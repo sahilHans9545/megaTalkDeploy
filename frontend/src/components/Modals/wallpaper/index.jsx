@@ -45,7 +45,7 @@ const Wallpaper = ({ socket }) => {
         },
       };
       const { data } = await axios.put(
-        `http://localhost:5000/api/chat/clearWallpaper`,
+        `https://megatalk-backend.onrender.com/api/chat/clearWallpaper`,
         {
           chatId: selectedChat._id,
         },

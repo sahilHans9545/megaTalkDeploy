@@ -45,7 +45,7 @@ const CreateGroupChat = () => {
         },
       };
       const { data } = await axios.get(
-        `http://localhost:5000/api/user?search=${query}`,
+        `https://megatalk-backend.onrender.com/api/user?search=${query}`,
         config
       );
       console.log(data);
@@ -88,7 +88,7 @@ const CreateGroupChat = () => {
         },
       };
       const { data } = await axios.post(
-        `http://localhost:5000/api/chat/group`,
+        `https://megatalk-backend.onrender.com/api/chat/group`,
         {
           name: groupChatName,
           users: selectedUsers,
