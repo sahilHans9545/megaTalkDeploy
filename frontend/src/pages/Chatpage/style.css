@@ -1,0 +1,37 @@
+#chatPage {
+    height: 100vh;
+}
+
+.chatBox{
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+
+.chatTextBox{
+    /* background-image: url("../../assets/defaultChatBg.png"); */
+    background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+}
+
+
+.wallpaperTypes{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(120px, 1fr));
+    justify-content: center;
+    gap: 8px;
+}
+
+.wallpaperImageGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    /* grid-template-rows: repeat(auto-fit,  120px); */
+    justify-content: center;
+}
+
+.wallpaperImageGrid img{
+    object-fit: cover;
+    aspect-ratio: 1/0.5;
+}
