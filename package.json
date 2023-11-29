@@ -13,5 +13,8 @@
     "server": "nodemon server/server.js"
   },
   "author": "Sahil Hans",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "vite": "^5.0.4"
+  }
 }
