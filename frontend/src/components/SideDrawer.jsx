@@ -40,7 +40,7 @@ const SideDrawer = ({ ShowSideDrawer, setShowSideDrawer }) => {
       };
 
       const { data } = await axios.get(
-        `https://megatalk-backend.onrender.com/api/user?search=${search}`,
+        `http://localhost:5000/user?search=${search}`,
         config
       );
 
@@ -65,7 +65,7 @@ const SideDrawer = ({ ShowSideDrawer, setShowSideDrawer }) => {
         },
       };
       const { data } = await axios.post(
-        `https://megatalk-backend.onrender.com/api/chat`,
+        `http://localhost:5000/chat`,
         { userId },
         config
       );

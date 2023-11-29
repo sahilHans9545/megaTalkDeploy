@@ -35,7 +35,7 @@ const UpdateGroupChat = () => {
         },
       };
       const { data } = await axios.get(
-        `https://megatalk-backend.onrender.com/api/user?search=${search}`,
+        `http://localhost:5000/user?search=${search}`,
         config
       );
       console.log(data);
@@ -58,7 +58,7 @@ const UpdateGroupChat = () => {
         },
       };
       const { data } = await axios.put(
-        "https://megatalk-backend.onrender.com/api/chat/rename",
+        "http://localhost:5000/chat/rename",
         {
           chatId: selectedChat._id,
           chatName: groupChatName,
@@ -94,7 +94,7 @@ const UpdateGroupChat = () => {
         },
       };
       const { data } = await axios.put(
-        `https://megatalk-backend.onrender.com/api/group/addUser`,
+        `http://localhost:5000/group/addUser`,
         {
           chatId: selectedChat._id,
           userId: user1._id,
@@ -126,7 +126,7 @@ const UpdateGroupChat = () => {
         },
       };
       const { data } = await axios.put(
-        `https://megatalk-backend.onrender.com/api/group/removeUser`,
+        `http://localhost:5000/group/removeUser`,
         {
           chatId: selectedChat._id,
           userId: user1._id,

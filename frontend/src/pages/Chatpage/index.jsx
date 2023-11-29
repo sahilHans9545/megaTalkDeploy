@@ -73,7 +73,7 @@ const ChatPage = () => {
       .then((userData) => {
         dispatch(setUser({ userData }));
         console.log("AGAINA  AGAGAG");
-        socketInstance = io("https://megatalk-backend.onrender.com", {
+        socketInstance = io("http://localhost:5000", {
           transports: ["websocket", "polling", "flashsocket"],
           auth: { token: userData._id },
         });

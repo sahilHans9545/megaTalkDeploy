@@ -4,17 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install-server": "cd server && npm install",
-    "start-server": "cd server && node index.js",
-    "install-client": "cd frontend && npm install",
-    "build-client": "cd frontend &&  npm run build",
     "start-client": "cd frontend && npm run dev",
-    "start": "node server/server.js",
-    "server": "nodemon server/server.js"
+    "start-server": "cd server && node index.js",
+    "dev": "concurrently \"npm run start-client\" \"npm run start-server\""
   },
   "author": "Sahil Hans",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^8.2.2",
     "vite": "^5.0.4"
   }
 }

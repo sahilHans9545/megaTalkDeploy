@@ -126,14 +126,14 @@ const register = async (req, res) => {
         password: hashedPassword,
         profilePic,
       });
-
+      console.log(process.env.JWT_SECRET);
       const verificationToken = jwt.sign(
         {
           userId: newUser._id,
           username,
           email,
         },
-        process.env.JWT_SECRET,
+        "uiyiurwytjuhiu",
         { expiresIn: "1h" }
       );
 

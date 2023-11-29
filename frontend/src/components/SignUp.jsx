@@ -26,7 +26,7 @@ const SignUp = () => {
       return;
     }
     setLoading(true);
-    const url = "https://megatalk-backend.onrender.com/api/register";
+    const url = "http://localhost:5000/api/register";
     const data = {
       username,
       email,
