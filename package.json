@@ -6,12 +6,12 @@
   "scripts": {
     "install-server": "cd server && npm install",
     "start-server": "cd server && node index.js",
-    "install-client": "cd frontEnd && npm install",
-    "build-client": "cd frontEnd && npm run build",
-    "start-client": "cd frontEnd && npm run dev",
+    "install-client": "cd frontend && npm install",
+    "build-client": "cd frontend && npm run build",
+    "start-client": "cd frontend && npm run dev",
     "start": "node server/server.js",
     "server": "nodemon server/server.js",
-    "build": "npm install --prefix server && npm install --prefix frontEnd && npm run build --prefix frontEnd"
+    "build": " npm install && cd frontend && npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "Sahil Hans",
   "license": "ISC"
