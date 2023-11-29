@@ -6,35 +6,46 @@ import path from "path";
 export default defineConfig({
   plugins: [react()],
   resolve: {
-    alias: [
+    alias:
+      // [
+      //   {
+      //     find: "components",
+      //     replacement: path.resolve(__dirname, "src/components"),
+      //   },
+      //   {
+      //     find: "pages",
+      //     replacement: path.resolve(__dirname, "src/pages"),
+      //   },
+      //   {
+      //     find: "assets",
+      //     replacement: path.resolve(__dirname, "src/assets"),
+      //   },
+      //   {
+      //     find: "store",
+      //     replacement: path.resolve(__dirname, "src/store"),
+      //   },
+      //   {
+      //     find: "ApiCalls",
+      //     replacement: path.resolve(__dirname, "src/ApiCalls"),
+      //   },
+      //   {
+      //     find: "config",
+      //     replacement: path.resolve(__dirname, "src/config"),
+      //   },
+      //   {
+      //     find: "utils",
+      //     replacement: path.resolve(__dirname, "src/utils"),
+      //   },
+      // ],
+
       {
-        find: "components",
-        replacement: path.resolve(__dirname, "/src/components"),
+        "@components": path.resolve(__dirname, "src/components"),
+        "@pages": path.resolve(__dirname, "src/pages"),
+        "@assets": path.resolve(__dirname, "src/assets"),
+        "@store": path.resolve(__dirname, "src/store"),
+        "@ApiCalls": path.resolve(__dirname, "src/ApiCalls"),
+        "@config": path.resolve(__dirname, "src/config"),
+        "@utils": path.resolve(__dirname, "src/utils"),
       },
-      {
-        find: "pages",
-        replacement: path.resolve(__dirname, "/src/pages"),
-      },
-      {
-        find: "assets",
-        replacement: path.resolve(__dirname, "/src/assets"),
-      },
-      {
-        find: "store",
-        replacement: path.resolve(__dirname, "/src/store"),
-      },
-      {
-        find: "ApiCalls",
-        replacement: path.resolve(__dirname, "/src/ApiCalls"),
-      },
-      {
-        find: "config",
-        replacement: path.resolve(__dirname, "/src/config"),
-      },
-      {
-        find: "utils",
-        replacement: path.resolve(__dirname, "/src/utils"),
-      },
-    ],
   },
 });

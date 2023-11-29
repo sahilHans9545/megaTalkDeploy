@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from "react";
-import SideDrawer from "components/SideDrawer";
+import SideDrawer from "@components/SideDrawer";
 import { io } from "socket.io-client";
-import MyChats from "components/MyChats";
-import ChatBox from "components/ChatBox";
-import Header from "components/Header";
+import MyChats from "@components/MyChats";
+import ChatBox from "@components/ChatBox";
+import Header from "@components/Header";
 import "./style.css";
-import SideMenu from "components/SideMenu";
-import Modal from "components/Modals";
+import SideMenu from "@components/SideMenu";
+import Modal from "@components/Modals";
 import { useSelector, useDispatch } from "react-redux";
-import { setNotifications } from "store/slices/notificationSlice";
+import { setNotifications } from "@store/slices/notificationSlice";
 import {
   setChats,
   setFetchAgain,
   setMessages,
   setSelectedChat,
-} from "store/slices/chatSlice";
-import { getUser } from "ApiCalls/api";
-import { setUser } from "store/slices/userSlice";
-import { getSenderIndex } from "config/chaLogics";
+} from "@store/slices/chatSlice";
+import { getUser } from "@ApiCalls/api";
+import { setUser } from "@store/slices/userSlice";
+import { getSenderIndex } from "@config/chaLogics";
 let socketInstance;
 const ChatPage = () => {
   const { chats, selectedChat } = useSelector((state) => state.chatData);
