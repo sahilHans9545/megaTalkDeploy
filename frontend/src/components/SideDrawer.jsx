@@ -41,7 +41,7 @@ const SideDrawer = ({ ShowSideDrawer, setShowSideDrawer }) => {
       };
 
       const { data } = await axios.get(
-        `${apiUrl}/user?search=${search}`,
+        `${apiUrl}/api/user?search=${search}`,
         config
       );
 
@@ -65,7 +65,11 @@ const SideDrawer = ({ ShowSideDrawer, setShowSideDrawer }) => {
           Authorization: `Bearer ${userInfo.token}`,
         },
       };
-      const { data } = await axios.post(`${apiUrl}/chat`, { userId }, config);
+      const { data } = await axios.post(
+        `${apiUrl}/api/chat`,
+        { userId },
+        config
+      );
 
       if (!chats.find((c) => c._id === data._id))
         dispatch(setChats([data, ...chats]));
