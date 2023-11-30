@@ -49,7 +49,7 @@ const Login = () => {
   const handleSubmit = async () => {
     setLoading(true);
 
-    const url = "http://localhost:5000/api/login";
+    const url = "/api/login";
     const data = {
       username,
       password,
