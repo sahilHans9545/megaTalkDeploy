@@ -1,1 +1,2 @@
-export default const apiUrl = "";
+const apiUrl = " ";
+export default apiUrl;
