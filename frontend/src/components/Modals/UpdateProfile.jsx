@@ -8,6 +8,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { setUser } from "../../store/slices/userSlice";
 import postDetails from "../../utils/profileUpload";
+import apiUrl from "../../apiurl";
 // console.log("ProfileMODAL");
 const Profile = () => {
   const user = useSelector((state) => state.user.userData);
@@ -51,7 +52,7 @@ const Profile = () => {
 
       console.log("DATA S", data);
 
-      const url = `http://localhost:5000/api/updateuser?id=${user._id}`;
+      const url = `${apiUrl}/api/updateuser?id=${user._id}`;
 
       const config = {
         headers: {

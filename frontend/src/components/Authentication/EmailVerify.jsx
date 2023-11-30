@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { logOut } from "../../store/slices/userSlice";
 import { clearChat } from "../../store/slices/chatSlice";
 import { clearTheme } from "../../store/slices/themeSlice";
+import apiUrl from "../../apiurl";
 
 const EmailVerify = () => {
   const [validUrl, setValidUrl] = useState(false);
@@ -25,7 +26,7 @@ const EmailVerify = () => {
   useEffect(() => {
     const verifyEmailUrl = async () => {
       try {
-        const url = `http://localhost:5000/api/user/${param.id}/verify/${param.token}`;
+        const url = `${apiUrl}/api/user/${param.id}/verify/${param.token}`;
         const { data } = await axios.get(url);
         handleLogOut();
         // console.log(data);

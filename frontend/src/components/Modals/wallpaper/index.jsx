@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 
 import { setSelectedChat } from "../../../store/slices/chatSlice";
 import OvalLoading from "../../OvalLoading";
+import apiUrl from "../../../apiurl";
 
 const wallpaperTypes = [
   "Nature",
@@ -45,7 +46,7 @@ const Wallpaper = ({ socket }) => {
         },
       };
       const { data } = await axios.put(
-        `http://localhost:5000/chat/clearWallpaper`,
+        `${apiUrl}/chat/clearWallpaper`,
         {
           chatId: selectedChat._id,
         },

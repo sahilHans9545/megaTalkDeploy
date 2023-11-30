@@ -1,8 +1,9 @@
 import axios from "axios";
+import apiUrl from "../apiurl";
 //https://megatalkbackend.onrender.com
 export const getUser = (username) => {
   return axios
-    .get(`http://localhost:5000/api/getUser/${username}`)
+    .get(`${apiUrl}/api/getUser/${username}`)
     .then((response) => {
       // Handle the successful response
       // console.log("salu", response.data);

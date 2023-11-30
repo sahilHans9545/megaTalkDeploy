@@ -9,6 +9,7 @@ import { setModalType } from "../store/slices/modalSlice";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { getProfileName } from "../config/chaLogics";
+import apiUrl from "../apiurl";
 
 const GroupChat = () => {
   const selectedChat = useSelector((state) => state.chatData.selectedChat);
@@ -28,7 +29,7 @@ const GroupChat = () => {
         },
       };
       const { data } = await axios.put(
-        `http://localhost:5000/group/removeUser`,
+        `${apiUrl}/group/removeUser`,
         {
           chatId: selectedChat._id,
           userId: userData._id,

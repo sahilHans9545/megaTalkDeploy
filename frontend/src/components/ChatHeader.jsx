@@ -13,6 +13,7 @@ import { setModalType } from "../store/slices/modalSlice";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { getProfileName } from "../config/chaLogics";
+import apiUrl from "../apiurl";
 
 const ChatHeader = ({ sender, setMessages, messages }) => {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ const ChatHeader = ({ sender, setMessages, messages }) => {
       };
 
       const { data } = await axios.get(
-        `http://localhost:5000/api/emptyChat/${selectedChat._id}`,
+        `${apiUrl}/api/emptyChat/${selectedChat._id}`,
         config
       );
       console.log("DATA FROM SERVER", data);

@@ -10,7 +10,7 @@ const User = require("./models/userModel");
 bodyParser = require("body-parser");
 const app = express();
 
-app.use(cors());
+// app.use(cors());
 
 app.disable("x-powered-by");
 
@@ -78,7 +78,7 @@ const server = app.listen(5000, () => {
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: ["http://localhost:5173/", "https://megatalk-h4yu.onrender.com/"],
+    origin: "http://localhost:5173/",
   },
 });
 

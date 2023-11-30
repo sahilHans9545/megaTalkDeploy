@@ -9,6 +9,7 @@ import { Oval } from "react-loader-spinner";
 // import { getUser } from "../ApiCalls/api";
 import { toast } from "react-toastify";
 import postDetails from "../utils/profileUpload";
+import apiUrl from "../apiurl";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -26,7 +27,7 @@ const SignUp = () => {
       return;
     }
     setLoading(true);
-    const url = "http://localhost:5000/api/register";
+    const url = `${apiUrl}/api/register`;
     const data = {
       username,
       email,

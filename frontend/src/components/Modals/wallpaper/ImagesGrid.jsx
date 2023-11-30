@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import OvalLoading from "../../OvalLoading";
 import { setModalType } from "../../../store/slices/modalSlice";
+import apiUrl from "../../../apiurl";
 
 const ImagesGrid = ({ socket, images }) => {
   const { selectedChat } = useSelector((state) => state.chatData);
@@ -21,7 +22,7 @@ const ImagesGrid = ({ socket, images }) => {
         },
       };
       const { data } = await axios.put(
-        `http://localhost:5000/api/chat/wallpaper`,
+        `${apiUrl}/api/chat/wallpaper`,
         {
           chatId: selectedChat._id,
           wallpaper: image,

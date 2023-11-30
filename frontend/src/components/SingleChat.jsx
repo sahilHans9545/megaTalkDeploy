@@ -18,6 +18,7 @@ import Picker from "@emoji-mart/react";
 import { useRef } from "react";
 import GroupChat from "./GroupChat";
 import defaultBg from "../assets/defaultChatBg.png";
+import apiUrl from "../apiurl";
 
 const SingleChat = ({ socket }) => {
   const [loading, setLoading] = useState(true);
@@ -51,7 +52,7 @@ const SingleChat = ({ socket }) => {
       setLoading(true);
 
       const response = await axios.get(
-        `http://localhost:5000/api/message/${selectedChat._id}`,
+        `${apiUrl}/api/message/${selectedChat._id}`,
         config
       );
       console.log(response);

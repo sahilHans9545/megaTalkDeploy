@@ -8,6 +8,7 @@ import axios from "axios";
 
 import UserSearchItem from "../UserSearchItem";
 import { setChats, setSelectedChat } from "../../store/slices/chatSlice";
+import apiUrl from "../../apiurl";
 
 const CreateGroupChat = () => {
   const userInfo = useSelector((state) => state.user.userInfo);
@@ -45,7 +46,7 @@ const CreateGroupChat = () => {
         },
       };
       const { data } = await axios.get(
-        `http://localhost:5000/user?search=${query}`,
+        `${apiUrl}/user?search=${query}`,
         config
       );
       console.log(data);
@@ -88,7 +89,7 @@ const CreateGroupChat = () => {
         },
       };
       const { data } = await axios.post(
-        `http://localhost:5000/chat/group`,
+        `${apiUrl}/chat/group`,
         {
           name: groupChatName,
           users: selectedUsers,

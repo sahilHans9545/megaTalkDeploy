@@ -8,6 +8,7 @@ import { setSelectedChat } from "../../store/slices/chatSlice";
 import { Oval } from "react-loader-spinner";
 import axios from "axios";
 import UserSearchItem from "../UserSearchItem";
+import apiUrl from "../../apiurl";
 
 const UpdateGroupChat = () => {
   const dispatch = useDispatch();
@@ -35,7 +36,7 @@ const UpdateGroupChat = () => {
         },
       };
       const { data } = await axios.get(
-        `http://localhost:5000/user?search=${search}`,
+        `${apiUrl}/user?search=${search}`,
         config
       );
       console.log(data);
@@ -94,7 +95,7 @@ const UpdateGroupChat = () => {
         },
       };
       const { data } = await axios.put(
-        `http://localhost:5000/group/addUser`,
+        `${apiUrl}/group/addUser`,
         {
           chatId: selectedChat._id,
           userId: user1._id,
@@ -126,7 +127,7 @@ const UpdateGroupChat = () => {
         },
       };
       const { data } = await axios.put(
-        `http://localhost:5000/group/removeUser`,
+        `${apiUrl}/group/removeUser`,
         {
           chatId: selectedChat._id,
           userId: user1._id,

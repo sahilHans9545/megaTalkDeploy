@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { Audio } from "react-loader-spinner";
 import axios from "axios";
 import { setChats } from "../store/slices/chatSlice";
+import apiUrl from "../apiurl";
 
 const SideDrawer = ({ ShowSideDrawer, setShowSideDrawer }) => {
   const [search, setSearch] = useState("");
@@ -40,7 +41,7 @@ const SideDrawer = ({ ShowSideDrawer, setShowSideDrawer }) => {
       };
 
       const { data } = await axios.get(
-        `http://localhost:5000/user?search=${search}`,
+        `${apiUrl}/user?search=${search}`,
         config
       );
 
@@ -64,11 +65,7 @@ const SideDrawer = ({ ShowSideDrawer, setShowSideDrawer }) => {
           Authorization: `Bearer ${userInfo.token}`,
         },
       };
-      const { data } = await axios.post(
-        `http://localhost:5000/chat`,
-        { userId },
-        config
-      );
+      const { data } = await axios.post(`${apiUrl}/chat`, { userId }, config);
 
       if (!chats.find((c) => c._id === data._id))
         dispatch(setChats([data, ...chats]));
