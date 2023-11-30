@@ -25,7 +25,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const url = "https://localhost:5000/api/resendMail";
+      const url = "/api/resendMail";
       const data = {
         username: username,
       };
