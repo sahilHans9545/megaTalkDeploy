@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { userSlice } from "@store/slices/userSlice";
-import { chatSlice } from "@store/slices/chatSlice";
-import { modalSlice } from "@store/slices/modalSlice";
-import { themeSlice } from "@store/slices/themeSlice";
-import { notificationSlice } from "@store/slices/notificationSlice";
-import { socketSlice } from "@store/slices/socketSlice";
+import { userSlice } from "./slices/userSlice";
+import { chatSlice } from "./slices/chatSlice";
+import { modalSlice } from "./slices/modalSlice";
+import { themeSlice } from "./slices/themeSlice";
+import { notificationSlice } from "./slices/notificationSlice";
+import { socketSlice } from "./slices/socketSlice";
 
 const store = configureStore({
   reducer: {
