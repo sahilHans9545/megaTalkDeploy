@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import CancelIcon from "@mui/icons-material/Cancel";
 import { useDispatch, useSelector } from "react-redux";
-import { setModalType } from "@store/slices/modalSlice";
+import { setModalType } from "../../../store/slices/modalSlice";
 import axios from "axios";
-import ImagesGrid from "@components/Modals/wallpaper/ImagesGrid";
+import ImagesGrid from "./ImagesGrid";
 import { toast } from "react-toastify";
 
-import { setSelectedChat } from "@store/slices/chatSlice";
-import OvalLoading from "@components/OvalLoading";
+import { setSelectedChat } from "../../../store/slices/chatSlice";
+import OvalLoading from "../../OvalLoading";
 
 const wallpaperTypes = [
   "Nature",

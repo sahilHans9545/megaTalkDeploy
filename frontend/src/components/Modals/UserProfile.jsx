@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { getSenderFull } from "@config/chaLogics";
-import Profile from "@components/Modals/Profile";
+import { getSenderFull } from "../../config/chaLogics";
+import Profile from "./Profile";
 
 const UserProfile = () => {
   const dispatch = useDispatch();

@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import PersonSearchIcon from "@mui/icons-material/PersonSearch";
 import QuickreplyIcon from "@mui/icons-material/Quickreply";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import logo from "@assets/logo.png";
+import logo from "../assets/logo.png";
 import { useDispatch, useSelector } from "react-redux";
-import { setModalType } from "@store/slices/modalSlice";
-import { getSender } from "@config/chaLogics";
-import { setSelectedChat } from "@store/slices/chatSlice";
-import { setNotifications } from "@store/slices/notificationSlice";
-import userImg from "@assets/user.png";
+import { setModalType } from "../store/slices/modalSlice";
+import { getSender } from "../config/chaLogics";
+import { setSelectedChat } from "../store/slices/chatSlice";
+import { setNotifications } from "../store/slices/notificationSlice";
+import userImg from "../assets/user.png";
 
 const Header = ({ setShowSideDrawer }) => {
   const userData = useSelector((state) => state.user?.userData);

@@ -6,18 +6,18 @@ import {
   setFetchAgain,
   setMessages,
   setSelectedChat,
-} from "@store/slices/chatSlice";
+} from "../store/slices/chatSlice";
 import { Oval } from "react-loader-spinner";
 import { toast } from "react-toastify";
 import axios from "axios";
-import ScrollableChat from "@components/ScrollableChat";
-import { getSenderFull } from "@config/chaLogics";
-import ChatHeader from "@components/ChatHeader";
+import ScrollableChat from "./ScrollableChat";
+import { getSenderFull } from "../config/chaLogics";
+import ChatHeader from "./ChatHeader";
 import data from "@emoji-mart/data";
 import Picker from "@emoji-mart/react";
 import { useRef } from "react";
-import GroupChat from "@components/GroupChat";
-import defaultBg from "@assets/defaultChatBg.png";
+import GroupChat from "./GroupChat";
+import defaultBg from "../assets/defaultChatBg.png";
 
 const SingleChat = ({ socket }) => {
   const [loading, setLoading] = useState(true);

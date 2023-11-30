@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import logo from "@assets/logo.png";
+import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import SingleChat from "@components/SingleChat";
-import GroupChat from "@components/GroupChat";
+import SingleChat from "./SingleChat";
+import GroupChat from "./GroupChat";
 
 const ChatBox = ({ socket }) => {
   // console.log("AGREE");

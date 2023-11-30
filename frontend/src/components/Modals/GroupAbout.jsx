@@ -1,8 +1,8 @@
 import React from "react";
 import CancelIcon from "@mui/icons-material/Cancel";
 import { useDispatch, useSelector } from "react-redux";
-import { setModalType } from "@store/slices/modalSlice";
-import UserSearchItem from "@components/UserSearchItem";
+import { setModalType } from "../../store/slices/modalSlice";
+import UserSearchItem from "../UserSearchItem";
 
 const GroupAbout = () => {
   const dispatch = useDispatch();
