@@ -6,7 +6,7 @@ import { setModalType } from "../../store/slices/modalSlice";
 import { toast } from "react-toastify";
 import axios from "axios";
 
-import UserSearchItem from "./UserSearchItem";
+import UserSearchItem from "../UserSearchItem";
 import { setChats, setSelectedChat } from "../../store/slices/chatSlice";
 
 const CreateGroupChat = () => {
