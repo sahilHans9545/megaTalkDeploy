@@ -73,7 +73,7 @@ const ChatPage = () => {
       .then((userData) => {
         dispatch(setUser({ userData }));
         console.log("AGAINA  AGAGAG");
-        socketInstance = io("/", {
+        socketInstance = io("", {
           transports: ["websocket", "polling", "flashsocket"],
           auth: { token: userData._id },
         });
