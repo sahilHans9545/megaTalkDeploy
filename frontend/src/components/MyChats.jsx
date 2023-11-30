@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { logOut } from "../store/slices/userSlice";
 import { Oval } from "react-loader-spinner";
 import MenuIcon from "@mui/icons-material/Menu";
+import apiurl from "../apiurl";
 
 const MyChats = () => {
   const { userInfo, userData } = useSelector((state) => state.user);
@@ -35,7 +36,7 @@ const MyChats = () => {
 
       const { data } = await axios.get(
         // "http://localhost:5000/chat",
-        "http://localhost:5000/api/chat",
+        `${apiurl}/api/chat`,
         config
       );
 
