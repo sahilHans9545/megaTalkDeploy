@@ -139,7 +139,9 @@ const SingleChat = ({ socket }) => {
 
   useEffect(() => {
     console.log("STATE change ho rhi hai");
-    setSender(getSenderFull(user, selectedChat.users));
+    if (selectedChat) {
+      setSender(getSenderFull(user, selectedChat.users));
+    }
     fetchMessages();
   }, [selectedChat]);
 
