@@ -81,7 +81,7 @@ const SingleChat = ({ socket }) => {
         setNewMessage("");
 
         const { data } = await axios.post(
-          "http://localhost:5000/api/message",
+          `${apiUrl}/api/message`,
           {
             content: newMessage,
             chatId: selectedChat._id,
