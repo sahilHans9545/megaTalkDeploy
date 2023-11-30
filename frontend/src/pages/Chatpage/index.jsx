@@ -74,10 +74,10 @@ const ChatPage = () => {
         dispatch(setUser({ userData }));
         console.log("AGAINA  AGAGAG");
         socketInstance = io("https://megatalk-h4yu.onrender.com/", {
-          transports: ["websocket", "polling", "flashsocket"],
           auth: { token: userData._id },
         });
 
+        // transports: ["websocket", "polling", "flashsocket"],
         socketInstance.emit("setup", userData);
         socketInstance.on("connected", () => {
           setSocketConnected(true);
