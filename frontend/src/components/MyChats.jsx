@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ChatWith from "@components/ChatWith";
+import ChatWith from "./ChatWith";
 import { useDispatch, useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";

@@ -7,7 +7,7 @@ import {
   isLastMessage,
   isPreviousDiff,
   isSameSender,
-} from "@config/chaLogics";
+} from "../config/chaLogics";
 
 const ScrollableChat = ({ messages, istyping }) => {
   const messagesEndRef = useRef(null);
