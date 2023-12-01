@@ -65,8 +65,8 @@ const ChatPage = () => {
   };
 
   useEffect(() => {
-    console.log("CALL M");
-    console.log(" USERNAME *** ", userInfo.username);
+    // console.log("CALL M");
+    // console.log(" USERNAME *** ", userInfo.username);
     const userD = getUser(userInfo.username);
 
     userD
@@ -120,7 +120,7 @@ const ChatPage = () => {
   useEffect(() => {
     if (socketConnected && socket) {
       socket.on("message recieved", (newMessageRecieved) => {
-        console.log("NEW NOTIFICATION");
+        // console.log("NEW NOTIFICATION");
 
         if (
           selectedChat === "" ||
@@ -175,7 +175,7 @@ const ChatPage = () => {
   useEffect(() => {
     if (socketConnected && socket) {
       socket.on("wallpaper changed", (chat) => {
-        alert("wallpaper");
+        // alert("wallpaper");
         const newChats = [...chats];
 
         const chatToUpdate = newChats.find((c) => c._id === chat._id);
