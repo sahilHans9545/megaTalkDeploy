@@ -35,7 +35,9 @@ const ChatPage = () => {
     if (chats) {
       const updatedChats = chats.map((chat) => {
         if (chat?.isGroupChat) return;
+        console.log("CHAT ", chat);
         const users = [...chat.users];
+        console.log("users", users);
         const index = getSenderIndex(userData, users);
 
         if (index !== -1 && users[index]._id === userId) {

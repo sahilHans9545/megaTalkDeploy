@@ -29,7 +29,7 @@ const GroupChat = () => {
         },
       };
       const { data } = await axios.put(
-        `${apiUrl}/group/removeUser`,
+        `${apiUrl}/api/group/removeUser`,
         {
           chatId: selectedChat._id,
           userId: userData._id,

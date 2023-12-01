@@ -36,7 +36,7 @@ const UpdateGroupChat = () => {
         },
       };
       const { data } = await axios.get(
-        `${apiUrl}/user?search=${search}`,
+        `${apiUrl}/api/user?search=${search}`,
         config
       );
       console.log(data);
@@ -59,7 +59,7 @@ const UpdateGroupChat = () => {
         },
       };
       const { data } = await axios.put(
-        "http://localhost:5000/chat/rename",
+        `${apiUrl}/api/chat/rename`,
         {
           chatId: selectedChat._id,
           chatName: groupChatName,
@@ -127,7 +127,7 @@ const UpdateGroupChat = () => {
         },
       };
       const { data } = await axios.put(
-        `${apiUrl}/group/removeUser`,
+        `${apiUrl}/api/group/removeUser`,
         {
           chatId: selectedChat._id,
           userId: user1._id,
