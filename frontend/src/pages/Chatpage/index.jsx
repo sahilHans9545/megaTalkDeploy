@@ -203,7 +203,11 @@ const ChatPage = () => {
   }, [selectedChat, chats, socket, socketConnected]);
 
   return (
-    <div id="chatPage" className="flex flex-col">
+    <div
+      id="chatPage"
+      className="flex flex-col"
+      style={{ userSelect: "revert-layer" }}
+    >
       <Header setShowSideDrawer={setShowSideDrawer} />
       <SideDrawer
         setShowSideDrawer={setShowSideDrawer}
