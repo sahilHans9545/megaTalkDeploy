@@ -29,8 +29,8 @@ const SignUp = () => {
     setLoading(true);
     const url = `${apiUrl}/api/register`;
     const data = {
-      username,
-      email,
+      username: username.trim(),
+      email: email.trim(),
       profilePic: pic,
       password,
     };

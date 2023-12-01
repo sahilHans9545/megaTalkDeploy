@@ -46,7 +46,7 @@ const CreateGroupChat = () => {
         },
       };
       const { data } = await axios.get(
-        `${apiUrl}/user?search=${query}`,
+        `${apiUrl}/api/user?search=${query}`,
         config
       );
       console.log(data);
@@ -89,7 +89,7 @@ const CreateGroupChat = () => {
         },
       };
       const { data } = await axios.post(
-        `${apiUrl}/chat/group`,
+        `${apiUrl}/api/chat/group`,
         {
           name: groupChatName,
           users: selectedUsers,

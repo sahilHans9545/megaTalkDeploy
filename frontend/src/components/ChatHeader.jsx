@@ -20,7 +20,7 @@ const ChatHeader = ({ sender, setMessages, messages }) => {
   const [showMenu, setShowMenu] = useState(false);
   const { selectedChat, fetchAgain } = useSelector((state) => state.chatData);
   const { userInfo } = useSelector((state) => state.user);
-  console.log("SENDER", sender);
+  // console.log("SENDER", sender);
   const emptyChat = async () => {
     if (!selectedChat) return;
 

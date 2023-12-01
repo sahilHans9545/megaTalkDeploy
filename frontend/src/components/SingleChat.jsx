@@ -55,7 +55,7 @@ const SingleChat = ({ socket }) => {
         `${apiUrl}/api/message/${selectedChat._id}`,
         config
       );
-      console.log(response);
+      // console.log(response);
       dispatch(setMessages(response.data));
       setLoading(false);
 

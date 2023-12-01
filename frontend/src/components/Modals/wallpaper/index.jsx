@@ -46,7 +46,7 @@ const Wallpaper = ({ socket }) => {
         },
       };
       const { data } = await axios.put(
-        `${apiUrl}/chat/clearWallpaper`,
+        `${apiUrl}/chat/api/clearWallpaper`,
         {
           chatId: selectedChat._id,
         },
