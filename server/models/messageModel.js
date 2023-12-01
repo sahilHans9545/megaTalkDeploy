@@ -14,6 +14,7 @@ const messageSchema = mongoose.Schema(
           hour: "numeric",
           minute: "numeric",
           hour12: true,
+          timeZone: "Asia/Kolkata",
         });
       },
     },
