@@ -51,6 +51,11 @@ const ChatPage = () => {
           updatedUsers[index] = updatedUser;
           console.log("UPDATED USERSSS ", updatedUsers);
           // Update the 'chat' with the new 'users' array
+          console.log(
+            { ...chat, users: updatedUsers },
+            "NEW CHAT MUST BE",
+            users[0]
+          );
 
           return { ...chat, users: updatedUsers };
         }
