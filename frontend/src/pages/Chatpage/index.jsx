@@ -34,33 +34,23 @@ const ChatPage = () => {
   const updateOnlineStatus = (userId, status) => {
     if (chats) {
       const updatedChats = chats.map((chat) => {
-        if (chat?.isGroupChat) return;
-        console.log("CHAT ", chat);
+        if (chat?.isGroupChat) return chat;
         const users = [...chat.users];
-        console.log("users", users);
         const index = getSenderIndex(userData, users);
 
         if (index !== -1 && users[index]._id === userId) {
           // Create a new user object with the updated 'isOnline' property
-          console.log("USERS INSIDE IF ", users);
           const updatedUser = { ...users[index], isOnline: status };
-          console.log("UPDATED USER ", updatedUser);
           // Create a new copy of the 'users' array with the updated user
           const updatedUsers = [...users];
 
           updatedUsers[index] = updatedUser;
-          console.log("UPDATED USERSSS ", updatedUsers);
           // Update the 'chat' with the new 'users' array
-          console.log(
-            { ...chat, users: updatedUsers },
-            "NEW CHAT MUST BE",
-            users[0]
-          );
 
           return { ...chat, users: updatedUsers };
         }
 
-        return chat; // Return unchanged chat if user not found
+        return chat; // Return unchanged chat if user is not in our chats
       });
 
       dispatch(setChats(updatedChats));
