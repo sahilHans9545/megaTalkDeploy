@@ -34,7 +34,7 @@ const ScrollableChat = ({ messages, istyping }) => {
   };
 
   return (
-    <div className="px-2 sm:px-3 py-4">
+    <div className="px-2 sm:px-3 py-4 relative">
       {messages &&
         messages.map((message, i) => {
           return (
@@ -91,8 +91,8 @@ const ScrollableChat = ({ messages, istyping }) => {
           );
         })}
 
-      {istyping && (
-        <span className="relative left-3 top-3">
+      {!istyping && (
+        <span className="absolute bottom-1 left-3">
           <ThreeDots
             height="40"
             width="40"
@@ -105,6 +105,7 @@ const ScrollableChat = ({ messages, istyping }) => {
           />
         </span>
       )}
+      <div className="pt-8"></div>
       <div ref={messagesEndRef}></div>
     </div>
   );
