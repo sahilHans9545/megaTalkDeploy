@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { setUser } from "../store/slices/userSlice";
 import { getUser } from "../ApiCalls/api";
 import { toast } from "react-toastify";
+import apiUrl from "../apiurl";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -25,7 +26,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const url = "/api/resendMail";
+      const url = `${apiUrl}/api/resendMail`;
       const data = {
         username: username,
       };
@@ -49,7 +50,7 @@ const Login = () => {
   const handleSubmit = async () => {
     setLoading(true);
 
-    const url = "/api/login";
+    const url = `${apiUrl}/api/login`;
     const data = {
       username,
       password,

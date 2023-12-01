@@ -10,7 +10,7 @@ const User = require("./models/userModel");
 bodyParser = require("body-parser");
 const app = express();
 
-// app.use(cors());
+app.use(cors());
 
 app.disable("x-powered-by");
 

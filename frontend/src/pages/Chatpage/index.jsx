@@ -74,10 +74,10 @@ const ChatPage = () => {
         dispatch(setUser({ userData }));
         console.log("AGAINA  AGAGAG");
         socketInstance = io("https://megatalk-h4yu.onrender.com/", {
+          // transports: ["websocket", "polling", "flashsocket"],
           auth: { token: userData._id },
         });
 
-        // transports: ["websocket", "polling", "flashsocket"],
         socketInstance.emit("setup", userData);
         socketInstance.on("connected", () => {
           setSocketConnected(true);
@@ -221,7 +221,11 @@ const ChatPage = () => {
         >
           <MyChats />
         </div>
-        <div className={`flex-1 ${selectedChat ? "block" : "hidden md:block"}`}>
+        <div
+          className={`flex-1 ${
+            selectedChat ? "block" : "hidden md:block"
+          } fixed sm:static top-0 bottom-0 left-0 right-0 h-[100vh] sm:h-auto`}
+        >
           <ChatBox socket={socket} />
         </div>
       </div>
