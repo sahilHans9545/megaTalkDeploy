@@ -42,12 +42,14 @@ const ChatPage = () => {
 
         if (index !== -1 && users[index]._id === userId) {
           // Create a new user object with the updated 'isOnline' property
+          console.log("USERS INSIDE IF ", users);
           const updatedUser = { ...users[index], isOnline: status };
-
+          console.log("UPDATED USER ", updatedUser);
           // Create a new copy of the 'users' array with the updated user
           const updatedUsers = [...users];
 
           updatedUsers[index] = updatedUser;
+          console.log("UPDATED USERSSS ", updatedUsers);
           // Update the 'chat' with the new 'users' array
 
           return { ...chat, users: updatedUsers };
