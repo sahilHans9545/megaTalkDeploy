@@ -32,35 +32,37 @@ const ChatPage = () => {
   const dispatch = useDispatch();
 
   const updateOnlineStatus = (userId, status) => {
-    const updatedChats = chats.map((chat) => {
-      if (chat?.isGroupChat) return;
-      const users = [...chat.users];
-      const index = getSenderIndex(userData, users);
+    if (chats) {
+      const updatedChats = chats.map((chat) => {
+        if (chat?.isGroupChat) return;
+        const users = [...chat.users];
+        const index = getSenderIndex(userData, users);
 
-      if (index !== -1 && users[index]._id === userId) {
-        // Create a new user object with the updated 'isOnline' property
-        const updatedUser = { ...users[index], isOnline: status };
+        if (index !== -1 && users[index]._id === userId) {
+          // Create a new user object with the updated 'isOnline' property
+          const updatedUser = { ...users[index], isOnline: status };
 
-        // Create a new copy of the 'users' array with the updated user
-        const updatedUsers = [...users];
+          // Create a new copy of the 'users' array with the updated user
+          const updatedUsers = [...users];
 
-        updatedUsers[index] = updatedUser;
-        // Update the 'chat' with the new 'users' array
+          updatedUsers[index] = updatedUser;
+          // Update the 'chat' with the new 'users' array
 
-        return { ...chat, users: updatedUsers };
+          return { ...chat, users: updatedUsers };
+        }
+
+        return chat; // Return unchanged chat if user not found
+      });
+
+      dispatch(setChats(updatedChats));
+
+      // Now, if you also want to update the 'selectedChat' based on the 'userId', you can do that here
+      if (selectedChat) {
+        const updatedSelectedChat = updatedChats.find(
+          (chat) => chat._id === selectedChat._id
+        );
+        dispatch(setSelectedChat(updatedSelectedChat));
       }
-
-      return chat; // Return unchanged chat if user not found
-    });
-
-    dispatch(setChats(updatedChats));
-
-    // Now, if you also want to update the 'selectedChat' based on the 'userId', you can do that here
-    if (selectedChat) {
-      const updatedSelectedChat = updatedChats.find(
-        (chat) => chat._id === selectedChat._id
-      );
-      dispatch(setSelectedChat(updatedSelectedChat));
     }
   };
 
@@ -222,9 +224,8 @@ const ChatPage = () => {
           <MyChats />
         </div>
         <div
-          className={`flex-1 ${
-            selectedChat ? "block" : "hidden md:block"
-          } fixed sm:static top-0 bottom-0 left-0 right-0 h-[100vh] sm:h-auto`}
+          className={`flex-1 ${selectedChat ? "block" : "hidden md:block"}`}
+          //  fixed sm:static top-0 bottom-0 left-0 right-0 h-[100vh] sm:h-auto
         >
           <ChatBox socket={socket} />
         </div>

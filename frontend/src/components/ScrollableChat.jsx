@@ -91,7 +91,7 @@ const ScrollableChat = ({ messages, istyping }) => {
           );
         })}
 
-      {!istyping && (
+      {istyping && (
         <span className="absolute bottom-1 left-3">
           <ThreeDots
             height="40"
