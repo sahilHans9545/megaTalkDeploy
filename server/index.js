@@ -7,6 +7,7 @@ const cors = require("cors");
 const router = require("./routes/router");
 const path = require("path");
 const User = require("./models/userModel");
+const Message = require("./models/messageModel");
 bodyParser = require("body-parser");
 const app = express();
 
@@ -86,7 +87,7 @@ io.on("connection", async (socket) => {
   console.log("Connected to socket.io");
   socket.on("setup", (userData) => {
     socket.join(userData._id);
-    console.log(" *** USERNAME ***", userData.username);
+    // console.log(" *** USERNAME ***", userData.username);
     socket.emit("connected");
   });
 
@@ -114,6 +115,19 @@ io.on("connection", async (socket) => {
 
       socket.in(user._id).emit("message recieved", newMessageRecieved);
     });
+  });
+
+  socket.on("markMessagesAsSeen", async ({ chatId, userId }) => {
+    console.log("markMessages seen");
+    try {
+      await Message.updateMany(
+        { chat: chatId, isSeen: false },
+        { $set: { isSeen: true } }
+      );
+      socket.in(userId).emit("messagesSeen", chatId);
+    } catch (error) {
+      console.log(error);
+    }
   });
 
   socket.on("wallpaper change", (chat, senderId) => {

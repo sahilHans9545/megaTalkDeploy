@@ -32,11 +32,14 @@ const ChatPage = () => {
   const dispatch = useDispatch();
 
   const updateOnlineStatus = (userId, status) => {
-    if (chats) {
+    if (chats && chats.length > 0) {
       const updatedChats = chats.map((chat) => {
         if (chat?.isGroupChat) return chat;
-        const users = [...chat.users];
+        // const users = [...chat.users];
+        const users = chat.users.map((user) => ({ ...user }));
+        console.log("USERS ARE ", users);
         const index = getSenderIndex(userData, users);
+        console.log("INDEX IS ", index);
 
         if (index !== -1 && users[index]._id === userId) {
           // Create a new user object with the updated 'isOnline' property
@@ -52,6 +55,7 @@ const ChatPage = () => {
 
         return chat; // Return unchanged chat if user is not in our chats
       });
+      console.log("UPDATED CHATS", updatedChats);
 
       dispatch(setChats(updatedChats));
 
@@ -82,7 +86,7 @@ const ChatPage = () => {
         socketInstance.emit("setup", userData);
         socketInstance.on("connected", () => {
           setSocketConnected(true);
-          alert("CONNECTED");
+          // alert("CONNECTED");
         });
         setSocket(socketInstance);
         // dispatch(setSocket(socketInstance));

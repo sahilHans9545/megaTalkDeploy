@@ -12,6 +12,8 @@ import { useNavigate } from "react-router-dom";
 import { logOut } from "../store/slices/userSlice";
 import { Oval } from "react-loader-spinner";
 import MenuIcon from "@mui/icons-material/Menu";
+import DoneIcon from "@mui/icons-material/Done";
+import DoneAllIcon from "@mui/icons-material/DoneAll";
 import apiurl from "../apiurl";
 
 const MyChats = () => {
@@ -151,15 +153,26 @@ const MyChats = () => {
                             ? getSender(userData, userChat.users)
                             : userChat.chatName}
                         </p>
-                        <span
+                        <p
                           className={`${
                             selectedChat === userChat
                               ? "text-white"
                               : "text-[#a4a4a4]"
                           } inline-block w-40 md:w-52 text-ellipsis overflow-hidden whitespace-nowrap`}
                         >
+                          {!userChat.isGroupChat &&
+                            userData._id ===
+                              userChat.latestMessage?.sender._id && (
+                              <span className="pr-1">
+                                {userChat.latestMessage?.isSeen ? (
+                                  <DoneAllIcon style={{ fontSize: "22px" }} />
+                                ) : (
+                                  <DoneIcon style={{ fontSize: "22px" }} />
+                                )}
+                              </span>
+                            )}
                           {userChat?.latestMessage?.content || "Send Hello!"}
-                        </span>
+                        </p>
                       </div>
                     </div>
                     {!userChat.isGroupChat && (

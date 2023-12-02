@@ -1,20 +1,57 @@
 import React, { useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ThreeDots } from "react-loader-spinner";
 import userImg from "../assets/user.png";
+import DoneIcon from "@mui/icons-material/Done";
+import DoneAllIcon from "@mui/icons-material/DoneAll";
 import {
   getOnceSenderUsername,
   isLastMessage,
   isPreviousDiff,
   isSameSender,
 } from "../config/chaLogics";
+import { setFetchAgain, setMessages } from "../store/slices/chatSlice";
 
-const ScrollableChat = ({ messages, istyping }) => {
+const ScrollableChat = ({ messages, istyping, socket }) => {
+  const { selectedChat, fetchAgain } = useSelector((state) => state.chatData);
+  const { userData } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (messages.length) {
+      const latestMessage = messages[messages.length - 1];
+      const latestMsgFromUser = latestMessage.sender._id !== userData._id;
+      console.log("latest message from other user ", latestMsgFromUser);
+      if (latestMsgFromUser && !latestMessage.isSeen) {
+        console.log("latest message will change of the user");
+        socket.emit("markMessagesAsSeen", {
+          chatId: selectedChat._id,
+          userId: latestMessage.sender._id,
+        });
+      }
+
+      socket.on("messagesSeen", (chatId) => {
+        console.log("user has seen your message of chat id ", chatId);
+        const updatedMessages = messages.map((message) => {
+          if (!message.isSeen) {
+            const updatedMessage = { ...message, isSeen: true };
+            return updatedMessage;
+          }
+          return message;
+        });
+        // alert("messages updated");
+        dispatch(setMessages(updatedMessages));
+        // dispatch(setFetchAgain(!fetchAgain));
+      });
+    }
+    return () => {
+      socket.off("messagesSeen");
+    };
+  }, [messages, selectedChat, userData]);
   const messagesEndRef = useRef(null);
   const user = useSelector((state) => state.user.userData);
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView();
-  }, [messages, istyping]);
+  }, [messages]);
 
   const convertTime = (createdTime) => {
     const utcTimestamp = "2023-11-29T08:43:53.274Z";
@@ -72,16 +109,25 @@ const ScrollableChat = ({ messages, istyping }) => {
                       message.sender._id === user._id
                         ? "bg-color6 text-white rounded-tr-[2px]"
                         : "bg-white rounded-tl-[2px]"
-                    } rounded-[20px] px-4 py-1 pb-2 relative`}
+                    } rounded-[10px] px-4 py-1 pb-2 relative`}
                   >
-                    <p>
+                    <p className="break-all">
                       {" "}
                       {message.content} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                       &nbsp;
                     </p>
                     {/* <p className="pr-16 pt-1"> */}
-                    <span className="text-[10px] absolute bottom-0.5 right-3">
+                    <span className="text-[10px] absolute bottom-[1px] right-3 text-[#dfdfdf]">
                       {message?.createdTime}
+                      {message.sender._id === user._id && (
+                        <span>
+                          {message.isSeen ? (
+                            <DoneAllIcon style={{ fontSize: "14px" }} />
+                          ) : (
+                            <DoneIcon style={{ fontSize: "14px" }} />
+                          )}
+                        </span>
+                      )}
                     </span>
                     {/* </p> */}
                   </div>

@@ -90,6 +90,7 @@ const SingleChat = ({ socket }) => {
         );
         dispatch(setMessages([...messages, data]));
         socket.emit("new message", data);
+        // dispatch(setSelectedChat({ ...selectedChat, latestMessage: data }));
         dispatch(setFetchAgain(!fetchAgain));
 
         // toast.success("Message Sent.");
@@ -182,7 +183,11 @@ const SingleChat = ({ socket }) => {
             />
           </span>
         ) : (
-          <ScrollableChat messages={messages} istyping={istyping} />
+          <ScrollableChat
+            messages={messages}
+            istyping={istyping}
+            socket={socket}
+          />
         )}
         {/* <ScrollableChat messages={messages} istyping={istyping} /> */}
       </div>
