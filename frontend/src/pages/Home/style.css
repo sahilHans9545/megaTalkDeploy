@@ -1,6 +1,9 @@
 #homePage{
-    min-height: 100vh;
-    padding: 100px 0 20px;
+    height: 100vh;
+    /* padding: 100px 0 20px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-image: url("../../assets/homebg.jpg");
     /* background-size: 100% 100%; */
     background-size: cover;
@@ -11,7 +14,7 @@
 
 @media screen and (max-width:768px) {
     #homePage{
-        padding-top: 20px ;
+        /* padding-top: 20px ; */
     }
 }
 
