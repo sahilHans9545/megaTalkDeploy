@@ -159,7 +159,7 @@ const SingleChat = ({ socket }) => {
       )}
 
       <div
-        className="chatTextBox flex-1 overflow-auto"
+        className="chatTextBox pt-[55px] md:pt-0 flex-1 overflow-auto"
         style={{
           backgroundImage: `url(${
             selectedChat.wallpaper ? selectedChat.wallpaper : defaultBg

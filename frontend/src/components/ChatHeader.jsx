@@ -48,7 +48,7 @@ const ChatHeader = ({ sender, setMessages, messages }) => {
     setShowMenu(false);
   };
   return (
-    <div className="flex items-center justify-between gap-9 bg-white dark:text-white dark:bg-dark-grayish  py-2 px-3 lg:px-10 shadow-2xl">
+    <div className="fixed md:static  flex items-center justify-between gap-9 bg-white dark:text-white dark:bg-dark-grayish  py-2 px-3 lg:px-10 shadow-2xl">
       <div className="flex items-center gap-3">
         <span
           className="bg-slate-600 dark:bg-dark-primary p-1 text-white rounded-lg md:hidden mr-1 cursor-pointer "
