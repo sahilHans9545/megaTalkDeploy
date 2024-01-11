@@ -233,7 +233,7 @@ const ChatPage = () => {
         <div
           className={`flex-1 ${
             selectedChat ? "block" : "hidden md:block"
-          } h-screen md:h-auto fixed md:static top-0 left-0`}
+          } h-screen md:h-auto fixed md:static top-0 left-0 right-0`}
           //  fixed sm:static top-0 bottom-0 left-0 right-0 h-[100vh] sm:h-auto
         >
           <ChatBox socket={socket} />
