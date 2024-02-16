@@ -192,7 +192,7 @@ const SingleChat = ({ socket }) => {
         {/* <ScrollableChat messages={messages} istyping={istyping} /> */}
       </div>
 
-      <div className="flex gap-3 items-center py-4 px-4 lg:px-10 fixed md:relative w-full">
+      <div className="flex gap-3 items-center py-4 px-4 lg:px-10 fixed md:relative w-full bottom-0">
         <InsertEmoticonIcon
           className="cursor-pointer dark:text-white"
           onClick={() => {
