@@ -1,4 +1,4 @@
-const link = "deploy";
+const link = "deplo";
 const apiUrl =
   link === "deploy"
     ? "http://localhost:5000"
