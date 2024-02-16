@@ -58,8 +58,6 @@ app.use((err, req, res, next) => {
 
 // *** Connection with Database ***
 
-// console.log(process.env.MONGO_URL);
-// console.log(process.env.SMTP_EMAIL);
 const server = app.listen(5000, () => {
   mongoose
     .connect(

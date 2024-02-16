@@ -118,7 +118,13 @@ const ScrollableChat = ({ messages, istyping, socket }) => {
                     </p>
                     {/* <p className="pr-16 pt-1"> */}
                     <span className="text-[10px] absolute bottom-[1px] right-3 text-[#dfdfdf]">
-                      {message?.createdTime}
+                      <span
+                        className={
+                          message.sender._id === user._id ? "" : "text-gray-700"
+                        }
+                      >
+                        {message?.createdTime}
+                      </span>
                       {message.sender._id === user._id && (
                         <span>
                           {message.isSeen ? (

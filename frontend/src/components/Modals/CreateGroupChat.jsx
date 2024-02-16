@@ -115,7 +115,7 @@ const CreateGroupChat = () => {
   };
 
   return (
-    <div className="bg-white dark:bg-dark-secondary dark:text-white  shadow-xl w-96 h-min-72 fixed top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] p-4 pb-20 max-w-[90vw] max-h-[85vh] overflow-auto">
+    <div className="flex flex-col bg-white dark:bg-dark-secondary dark:text-white  shadow-xl w-96 h-min-72 fixed top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] p-4 pb-14 max-w-[90vw] max-h-[85vh] overflow-auto">
       <p className="text-center text-2xl">
         Create Group Chat
         <span
@@ -172,36 +172,41 @@ const CreateGroupChat = () => {
           Create
         </div>
       </form>
-      <div className="flex gap-2 mb-4 flex-wrap">
-        {selectedUsers.map((user) => (
-          <span
-            key={user._id}
-            className="bg-orange-600 text-white rounded-full py-1 px-3 text-sm"
-          >
-            {" "}
-            {user.username}
-            <span className="cursor-pointer" onClick={() => handleDelete(user)}>
-              <CloseIcon className="ml-1 w-[20px] h-5" />
-            </span>
-          </span>
-        ))}
-      </div>
-      {loading ? (
-        <div>Loading...</div>
-      ) : (
-        <div className="flex flex-col gap-2">
-          {searchResult?.slice(0, 3).map((user) => (
-            <div key={user._id} onClick={() => handleGroup(user)}>
+      <div className="flex-1 overflow-auto">
+        <div className="flex gap-2 mb-4 flex-wrap">
+          {selectedUsers.map((user) => (
+            <span
+              key={user._id}
+              className="bg-orange-600 text-white rounded-full py-1 px-3 text-sm"
+            >
               {" "}
-              <UserSearchItem
-                username={user.username}
-                email={user.email}
-                profile={user.profilePic}
-              />
-            </div>
+              {user.username}
+              <span
+                className="cursor-pointer"
+                onClick={() => handleDelete(user)}
+              >
+                <CloseIcon className="ml-1 w-[20px] h-5" />
+              </span>
+            </span>
           ))}
         </div>
-      )}
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          <div className="flex flex-col gap-2 ">
+            {searchResult?.slice(0, 3).map((user) => (
+              <div key={user._id} onClick={() => handleGroup(user)}>
+                {" "}
+                <UserSearchItem
+                  username={user.username}
+                  email={user.email}
+                  profile={user.profilePic}
+                />
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

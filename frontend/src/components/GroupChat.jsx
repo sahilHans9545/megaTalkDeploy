@@ -46,7 +46,7 @@ const GroupChat = () => {
   };
   return (
     <div>
-      <div className="  fixed md:static w-full flex items-center justify-between gap-9 bg-white dark:bg-dark-grayish dark:text-white py-2 px-3 lg:px-10 shadow-inner">
+      <div className="  fixed md:static w-full flex items-center justify-between gap-9 bg-white dark:bg-dark-grayish dark:text-white py-2 px-3 lg:px-10 shadow-inner z-[1]">
         <div className="flex items-center gap-3">
           <span
             className="bg-slate-600 dark:bg-dark-primary p-1 text-white rounded-lg md:hidden "

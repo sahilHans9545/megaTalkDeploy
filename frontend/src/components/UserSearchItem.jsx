@@ -5,7 +5,7 @@ const UserSearchItem = ({ email, username, profile, admin = "" }) => {
     <div className="flex items-center gap-2 bg-color4 p-2 rounded-md cursor-pointer">
       <img
         src={profile ? profile : userImg}
-        className="w-9 h-9 bg-slate-200 rounded-full"
+        className="w-9 h-9 bg-slate-200 rounded-full flex-shrink-0"
         alt=""
       />
       <div className="text-white">

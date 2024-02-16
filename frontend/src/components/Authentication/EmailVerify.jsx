@@ -28,13 +28,13 @@ const EmailVerify = () => {
       try {
         setLoading(true);
         const url = `${apiUrl}/api/user/${param.id}/verify/${param.token}`;
+        console.log(url);
         const { data } = await axios.get(url);
         handleLogOut();
-        // console.log(data);
         setValidUrl(true);
+        // console.log(data);
       } catch (error) {
-        // console.log(error);
-
+        console.log(error);
         setValidUrl(false);
       } finally {
         setLoading(false);
@@ -45,7 +45,7 @@ const EmailVerify = () => {
 
   return (
     <>
-      {loading && (
+      {!loading && (
         <div className="min-h-screen w-full flex justify-center items-center">
           {validUrl ? (
             <div className="min-h-screen w-full bg-[#77d177] text-white flex flex-col justify-center items-center">

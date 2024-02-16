@@ -126,7 +126,7 @@ const register = async (req, res) => {
         password: hashedPassword,
         profilePic,
       });
-      console.log(process.env.JWT_SECRET);
+      // console.log(process.env.JWT_SECRET);
       const verificationToken = jwt.sign(
         {
           userId: newUser._id,
@@ -141,11 +141,13 @@ const register = async (req, res) => {
 
       await newUser.save();
 
-      const url = `https://megatalk-h4yu.onrender.com/user/${newUser._id}/verify/${verificationToken}`;
+      // const url = `https://megatalk-h4yu.onrender.com/user/${newUser._id}/verify/${verificationToken}`;
+      const url = `http://localhost:5173/user/${newUser._id}/verify/${verificationToken}`;
+
       await sendMail(newUser.email, "Verify Email", url);
 
       // console.log(newUser);
-      const { password, ...rest } = newUser.toJSON();
+      // const { password, ...rest } = newUser.toJSON();
 
       res
         .status(200)
@@ -295,24 +297,24 @@ const generateOtp = async (req, res) => {
   res.status(201).send({ code: req.app.locals.OTP });
 };
 
-const verifyOtp = async (req, res) => {
-  const { code } = req.query;
-  if (parseInt(req.app.locals.OTP) === parseInt(code)) {
-    req.app.locals.OTP = null; // reset the OTP value
-    req.app.locals.resetSession = true; // start session for reset password
-    return res.status(201).send({ msg: "Verify Successsfully!" });
-  }
-  return res.status(400).send({ error: "Invalid OTP" });
-};
+// const verifyOtp = async (req, res) => {
+//   const { code } = req.query;
+//   if (parseInt(req.app.locals.OTP) === parseInt(code)) {
+//     req.app.locals.OTP = null; // reset the OTP value
+//     req.app.locals.resetSession = true; // start session for reset password
+//     return res.status(201).send({ msg: "Verify Successsfully!" });
+//   }
+//   return res.status(400).send({ error: "Invalid OTP" });
+// };
 
-const resetSession = async (req, res) => {
-  if (req.app.locals.resetSession) {
-    req.app.locals.resetSession = false;
-    return res.status(201).send({ msg: "Access granted" });
-    // return res.status(201).send({ flag: req.app.locals.resetSession });
-  }
-  return res.status(440).send({ error: "Session expired!" });
-};
+// const resetSession = async (req, res) => {
+//   if (req.app.locals.resetSession) {
+//     req.app.locals.resetSession = false;
+//     return res.status(201).send({ msg: "Access granted" });
+//     // return res.status(201).send({ flag: req.app.locals.resetSession });
+//   }
+//   return res.status(440).send({ error: "Session expired!" });
+// };
 
 // update the password when we have valid session
 
@@ -358,9 +360,9 @@ module.exports = {
   resendVerificationEmail,
   register,
   login,
-  generateOtp,
-  verifyOtp,
-  resetSession,
+  // generateOtp,
+  // verifyOtp,
+  // resetSession,
   resetPassword,
   updateUser,
   getUser,

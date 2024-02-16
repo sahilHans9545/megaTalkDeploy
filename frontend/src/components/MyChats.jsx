@@ -28,7 +28,7 @@ const MyChats = () => {
   const [loading, setLoading] = useState(false);
   // console.log("CHAT DATA ", chats);
   const fetchChats = async () => {
-    setLoading(true);
+    // setLoading(true);
     try {
       const config = {
         headers: {
@@ -44,7 +44,7 @@ const MyChats = () => {
 
       setDisplayChats(data);
       dispatch(setChats(data));
-      setLoading(false);
+      // setLoading(false);
     } catch (error) {
       if (error.response?.status === 401) {
         console.log(error);
@@ -61,6 +61,16 @@ const MyChats = () => {
   useEffect(() => {
     fetchChats();
   }, [fetchAgain]);
+
+  useEffect(() => {
+    const initialLoad = async () => {
+      setLoading(true);
+      await fetchChats();
+      setLoading(false);
+    };
+
+    initialLoad();
+  }, []);
 
   return (
     <div

@@ -78,6 +78,7 @@ const ChatPage = () => {
       .then((userData) => {
         dispatch(setUser({ userData }));
         console.log("AGAINA  AGAGAG");
+        // https://megatalk-h4yu.onrender.com/
         socketInstance = io("https://megatalk-h4yu.onrender.com/", {
           // transports: ["websocket", "polling", "flashsocket"],
           auth: { token: userData._id },
@@ -92,7 +93,7 @@ const ChatPage = () => {
         // dispatch(setSocket(socketInstance));
       })
       .catch((error) => {
-        console.error("Error:", error);
+        console.error("Error:", error.response);
         dispatch(setUser(""));
       });
 
@@ -169,7 +170,7 @@ const ChatPage = () => {
           // setMessages([...messages, newMessageRecieved]);
           dispatch(setMessages([...messages, newMessageRecieved]));
 
-          console.log("YE TO DIRECT HAI");
+          // console.log("YE TO DIRECT HAI");
         }
       });
 

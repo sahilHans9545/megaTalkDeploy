@@ -30,11 +30,11 @@ router.route("/resendMail").post(controller.resendVerificationEmail); // Resend 
 
 /*GET Methods */
 router.route("/getuser/:username").get(controller.getUser); // user with username
-router
-  .route("/generateOTP")
-  .get(controller.verifyUser, AuthObj.localVariables, controller.generateOtp); // generate random OTP
-router.route("/verifyOTP").get(controller.verifyUser, controller.verifyOtp); // verify generated OTP
-router.route("/createResetSession").get(controller.resetSession); // reset all the variables
+// router
+//   .route("/generateOTP")
+//   .get(controller.verifyUser, AuthObj.localVariables, controller.generateOtp); // generate random OTP
+// router.route("/verifyOTP").get(controller.verifyUser, controller.verifyOtp); // verify generated OTP
+// router.route("/createResetSession").get(controller.resetSession); // reset all the variables
 
 /** PUT Methods */
 
