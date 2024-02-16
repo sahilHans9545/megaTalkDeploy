@@ -147,7 +147,7 @@ const SingleChat = ({ socket }) => {
   }, [selectedChat]);
 
   return (
-    <div className="flex flex-col h-full  pt-[60px] md:pt-0">
+    <div className="flex flex-col h-full pb-20 md:pb-0 pt-[60px] md:pt-0">
       {selectedChat.isGroupChat ? (
         <GroupChat />
       ) : (
@@ -159,7 +159,7 @@ const SingleChat = ({ socket }) => {
       )}
 
       <div
-        className="chatTextBox md:pt-0 flex-1 overflow-auto"
+        className="chatTextBox md:pt-0  overflow-auto h-96"
         style={{
           backgroundImage: `url(${
             selectedChat.wallpaper ? selectedChat.wallpaper : defaultBg
