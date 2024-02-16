@@ -159,7 +159,7 @@ const SingleChat = ({ socket }) => {
       )}
 
       <div
-        className="chatTextBox md:pt-0  overflow-auto h-96"
+        className="chatTextBox md:pt-0 flex-1 overflow-auto"
         style={{
           backgroundImage: `url(${
             selectedChat.wallpaper ? selectedChat.wallpaper : defaultBg
@@ -192,7 +192,7 @@ const SingleChat = ({ socket }) => {
         {/* <ScrollableChat messages={messages} istyping={istyping} /> */}
       </div>
 
-      <div className="flex gap-3 items-center py-4 px-4 lg:px-10 fixed md:relative w-full bottom-0 bg-white">
+      <div className="flex gap-3 items-center py-4 px-4 lg:px-10 relative bg-white">
         <InsertEmoticonIcon
           className="cursor-pointer dark:text-white"
           onClick={() => {

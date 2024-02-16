@@ -11,7 +11,7 @@ const ChatBox = ({ socket }) => {
   const selectedChat = useSelector((state) => state.chatData.selectedChat);
 
   return (
-    <div className="chatBox bg-white dark:bg-dark-grayish  h-full md:relative fixed top-0 bottom-0 w-full">
+    <div className="chatBox bg-white dark:bg-dark-grayish  h-[400px] relative">
       {!selectedChat ? (
         <div className="flex flex-col items-center absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 dark:text-white">
           <img src={logo} alt="" className="w-[150px]" />
