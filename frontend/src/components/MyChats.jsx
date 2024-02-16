@@ -204,7 +204,7 @@ const MyChats = () => {
       </div>
 
       <div
-        className="absolute left-0 bottom-0 bg-color6 text-white text-center px-4 py-2 w-full cursor-pointer"
+        className="fixed sm:absolute left-0 bottom-0 bg-color6 text-white text-center px-4 py-2 w-full cursor-pointer"
         onClick={() => dispatch(setModalType("createGroup"))}
       >
         Create a New Group
