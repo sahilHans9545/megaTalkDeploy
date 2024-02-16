@@ -147,7 +147,7 @@ const SingleChat = ({ socket }) => {
   }, [selectedChat]);
 
   return (
-    <div className="flex flex-col h-full pb-20 md:pb-0 pt-[60px] md:pt-0">
+    <div className="flex flex-col h-full  pt-[60px] md:pt-0">
       {selectedChat.isGroupChat ? (
         <GroupChat />
       ) : (
@@ -192,7 +192,7 @@ const SingleChat = ({ socket }) => {
         {/* <ScrollableChat messages={messages} istyping={istyping} /> */}
       </div>
 
-      <div className="flex gap-3 items-center py-4 px-4 lg:px-10 fixed md:relative w-full bottom-0">
+      <div className="flex gap-3 items-center py-4 px-4 lg:px-10 fixed md:relative w-full bottom-0 bg-white">
         <InsertEmoticonIcon
           className="cursor-pointer dark:text-white"
           onClick={() => {
