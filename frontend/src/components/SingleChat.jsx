@@ -139,7 +139,7 @@ const SingleChat = ({ socket }) => {
   }, []);
 
   useEffect(() => {
-    // console.log("STATE change ho rhi hai");
+    console.log("STATE change ho rhi hai");
     if (selectedChat) {
       setSender(getSenderFull(user, selectedChat.users));
     }
@@ -192,7 +192,7 @@ const SingleChat = ({ socket }) => {
         {/* <ScrollableChat messages={messages} istyping={istyping} /> */}
       </div>
 
-      <div className="flex gap-3 items-center py-4 px-4 lg:px-10 relative bg-white">
+      <div className="flex gap-3 items-center py-4 px-4 lg:px-10 relative">
         <InsertEmoticonIcon
           className="cursor-pointer dark:text-white"
           onClick={() => {
