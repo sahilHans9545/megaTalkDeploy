@@ -157,7 +157,7 @@ const ScrollableChat = ({ messages, istyping, socket }) => {
           />
         </span>
       )}
-      <div className="pt-8"></div>
+      <div className="pt-8 pb-5 md:pb-0"></div>
       <div ref={messagesEndRef}></div>
     </div>
   );
