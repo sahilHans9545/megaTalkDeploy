@@ -147,7 +147,7 @@ const SingleChat = ({ socket }) => {
   }, [selectedChat]);
 
   return (
-    <div className="flex flex-col h-full  pt-[60px] md:pt-0">
+    <div className="flex flex-col h-full  pt-[60px] md:pt-0 relative">
       {selectedChat.isGroupChat ? (
         <GroupChat />
       ) : (
