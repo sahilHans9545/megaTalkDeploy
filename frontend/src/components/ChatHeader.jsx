@@ -37,12 +37,12 @@ const ChatHeader = ({ sender, setMessages, messages }) => {
         `${apiUrl}/api/emptyChat/${selectedChat._id}`,
         config
       );
-      console.log("DATA FROM SERVER", data);
+      // console.log("DATA FROM SERVER", data);
       toast("Chat Deleted Successfully!");
       dispatch(setMessages([]));
       dispatch(setFetchAgain(!fetchAgain));
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toast.error(error.response.data.msg);
     }
     setShowMenu(false);

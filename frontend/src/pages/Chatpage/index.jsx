@@ -35,11 +35,10 @@ const ChatPage = () => {
     if (chats && chats.length > 0) {
       const updatedChats = chats.map((chat) => {
         if (chat?.isGroupChat) return chat;
-        // const users = [...chat.users];
         const users = chat.users.map((user) => ({ ...user }));
-        console.log("USERS ARE ", users);
+        // console.log("USERS ARE ", users);
         const index = getSenderIndex(userData, users);
-        console.log("INDEX IS ", index);
+        // console.log("INDEX IS ", index);
 
         if (index !== -1 && users[index]._id === userId) {
           // Create a new user object with the updated 'isOnline' property
@@ -55,12 +54,11 @@ const ChatPage = () => {
 
         return chat; // Return unchanged chat if user is not in our chats
       });
-      console.log("UPDATED CHATS", updatedChats);
+      // console.log("UPDATED CHATS", updatedChats);
 
       dispatch(setChats(updatedChats));
-
-      // Now, if you also want to update the 'selectedChat' based on the 'userId', you can do that here
       if (selectedChat) {
+        console.log("SELECTED CHAT");
         const updatedSelectedChat = updatedChats.find(
           (chat) => chat._id === selectedChat._id
         );
@@ -70,8 +68,6 @@ const ChatPage = () => {
   };
 
   useEffect(() => {
-    // console.log("CALL M");
-    // console.log(" USERNAME *** ", userInfo.username);
     const userD = getUser(userInfo.username);
 
     userD
@@ -87,10 +83,8 @@ const ChatPage = () => {
         socketInstance.emit("setup", userData);
         socketInstance.on("connected", () => {
           setSocketConnected(true);
-          // alert("CONNECTED");
         });
         setSocket(socketInstance);
-        // dispatch(setSocket(socketInstance));
       })
       .catch((error) => {
         console.error("Error:", error.response);
@@ -107,12 +101,10 @@ const ChatPage = () => {
   useEffect(() => {
     if (socketConnected && socket) {
       socket.on("getOnlineUser", ({ userId }) => {
-        // console.log(userId, " is Online");
         updateOnlineStatus(userId, true);
       });
 
       socket.on("getOfflineUser", ({ userId }) => {
-        // console.log(userId, " goes offline");
         updateOnlineStatus(userId, false);
       });
 
