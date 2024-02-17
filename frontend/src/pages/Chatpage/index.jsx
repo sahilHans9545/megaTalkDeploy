@@ -224,7 +224,7 @@ const ChatPage = () => {
           <MyChats />
         </div>
         <div
-          className={` h-screen  md:h-auto w-full md:w-auto flex-1 ${
+          className={`h-screen  md:h-auto w-full md:w-auto flex-1 ${
             selectedChat ? "block" : "hidden md:block"
           }`}
           //  fixed sm:static top-0 bottom-0 left-0 right-0 h-[100vh] sm:h-auto
