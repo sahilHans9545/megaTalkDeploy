@@ -57,12 +57,11 @@ app.use((err, req, res, next) => {
 });
 
 // *** Connection with Database ***
+console.log(process.env.MONGO_URL);
 
 const server = app.listen(5000, () => {
   mongoose
-    .connect(
-      "mongodb+srv://hanss9545:yHzKqKRSeBnIsR3b@cluster0.4gqosjj.mongodb.net/MegaTalk"
-    )
+    .connect(process.env.MONGO_URL)
     .then(() => {
       console.log(`Example app listening on port 5000`);
     })

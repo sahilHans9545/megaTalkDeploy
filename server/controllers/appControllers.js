@@ -141,8 +141,8 @@ const register = async (req, res) => {
 
       await newUser.save();
 
-      // const url = `https://megatalk-h4yu.onrender.com/user/${newUser._id}/verify/${verificationToken}`;
-      const url = `http://localhost:5173/user/${newUser._id}/verify/${verificationToken}`;
+      const url = `https://megatalk-h4yu.onrender.com/user/${newUser._id}/verify/${verificationToken}`;
+      // const url = `http://localhost:5173/user/${newUser._id}/verify/${verificationToken}`;
 
       await sendMail(newUser.email, "Verify Email", url);
 
