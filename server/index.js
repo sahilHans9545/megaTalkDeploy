@@ -57,7 +57,6 @@ app.use((err, req, res, next) => {
 });
 
 // *** Connection with Database ***
-console.log(process.env.MONGO_URL);
 
 const server = app.listen(5000, () => {
   mongoose

@@ -146,9 +146,6 @@ const register = async (req, res) => {
 
       await sendMail(newUser.email, "Verify Email", url);
 
-      // console.log(newUser);
-      // const { password, ...rest } = newUser.toJSON();
-
       res
         .status(200)
         .send({ message: "An Email sent to your account please verify" });
